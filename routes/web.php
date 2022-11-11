@@ -1,6 +1,8 @@
 <?php
 
+use App\Models\Listing;
 use Illuminate\Support\Facades\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +16,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('listings', [
+        'listings' => Listing::all()
+    ]);
+});
+
+Route::get('/listings/{listing}', function (Listing $listing) {
+
+    return view('listing', [
+        'listing' => $listing
+    ]);
 });
