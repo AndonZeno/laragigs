@@ -16,6 +16,10 @@ use Symfony\Component\HttpFoundation\Request;
 |
 */
 
+//all listings
 Route::get('/', [ListingController::class, 'index']);
 
+Route::get('/listings/create', [ListingController::class, 'create']);
+
+//single listing
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
