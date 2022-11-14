@@ -29,4 +29,4 @@ Route::post('/listings', [ListingController::class, 'store']);
 
 
 //single listing
-Route::post('/listings/{listing}', [ListingController::class, 'show']);
+Route::get('/listings/{listing}', [ListingController::class, 'show']);
